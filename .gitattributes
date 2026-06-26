@@ -1,0 +1,10 @@
+# 避免在 Windows 上编辑后传到 Linux 出现 bash\r / set: pipefail 等问题
+*.sh text eol=lf
+*.tpl text eol=lf
+*.conf text eol=lf
+*.properties text eol=lf
+*.properties.tpl text eol=lf
+*.json.tpl text eol=lf
+*.xml text eol=lf
+*.cnf text eol=lf
+*.cnf.tpl text eol=lf

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 规则标签 -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="规则名称（可选）">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 匹配类型选择 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="匹配方式"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/rgMatchType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <RadioButton
+                android:id="@+id/rbExact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="精确匹配"
+                android:textSize="14sp"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rbPrefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="前缀匹配"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rbOverseas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拦截所有海外号码"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rbLandline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拦截所有座机号码"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rbBlockAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拦截所有来电"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <!-- 号码输入区域（精确/前缀时显示） -->
+        <LinearLayout
+            android:id="@+id/tilPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <!-- 输入框 + 添加按钮 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="输入号码">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/btnAddNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="+ 添加"
+                    android:textSize="13sp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground" />
+            </LinearLayout>
+
+            <!-- 已添加的号码标签 -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:singleLine="false" />
+
+            <!-- 提示文字 -->
+            <TextView
+                android:id="@+id/tvNumberHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="支持多个号码，逐个添加"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- 时间段选择区域 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拦截时间段（可添加多个）"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="6dp" />
+
+        <!-- 快捷时间段按钮 -->
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:singleSelection="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAllDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全天"
+                android:textSize="12sp"
+                android:checkable="false"
+                style="@style/Widget.MaterialComponents.Chip.Action" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMorning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上午 0-12"
+                android:textSize="12sp"
+                android:checkable="false"
+                style="@style/Widget.MaterialComponents.Chip.Action" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNoon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中午 12-14"
+                android:textSize="12sp"
+                android:checkable="false"
+                style="@style/Widget.MaterialComponents.Chip.Action" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAfternoon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下午 14-24"
+                android:textSize="12sp"
+                android:checkable="false"
+                style="@style/Widget.MaterialComponents.Chip.Action" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- 已添加的时间段列表 -->
+        <LinearLayout
+            android:id="@+id/timeRangeListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 添加时间段按钮 -->
+        <TextView
+            android:id="@+id/btnAddTimeRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+ 添加时间段"
+            android:textSize="14sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+</ScrollView>

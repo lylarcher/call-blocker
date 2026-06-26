@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">来电拦截</string>
+    <string name="add_rule">添加规则</string>
+    <string name="phone_number">手机号码</string>
+    <string name="phone_number_hint">输入手机号码，留空则拦截所有来电</string>
+    <string name="start_time">开始时间</string>
+    <string name="end_time">结束时间</string>
+    <string name="block_all">拦截所有来电</string>
+    <string name="enable_rule">启用</string>
+    <string name="disable_rule">禁用</string>
+    <string name="delete_rule">删除</string>
+    <string name="confirm_delete">确认删除</string>
+    <string name="confirm_delete_msg">确定要删除这条拦截规则吗？</string>
+    <string name="service_running">来电拦截服务运行中</string>
+    <string name="service_stopped">来电拦截服务已停止</string>
+    <string name="no_rules">暂无拦截规则\n点击右下角按钮添加规则</string>
+    <string name="permission_required">权限缺失</string>
+    <string name="permission_phone_msg">需要电话权限才能拦截来电，请授予相关权限。</string>
+    <string name="go_to_settings">去设置</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="select_time">选择时间</string>
+    <string name="blocked_call">已拦截来电</string>
+    <string name="blocked_from">来自</string>
+    <string name="rule_active">生效中</string>
+    <string name="rule_inactive">未生效</string>
+    <string name="every_day">每天</string>
+    <string name="notification_channel_name">来电拦截通知</string>
+    <string name="notification_channel_desc">来电拦截服务的运行状态通知</string>
+    <string name="service_notification_title">来电拦截服务运行中</string>
+    <string name="service_notification_text">正在监控来电并拦截指定号码</string>
+    <string name="rule_label_specific">拦截号码:</string>
+    <string name="rule_label_time">时间段:</string>
+    <string name="rule_label_status">状态:</string>
+    <string name="blocked_calls_history">拦截记录</string>
+    <string name="no_blocked_calls">暂无拦截记录</string>
+    <string name="view_history">查看拦截记录</string>
+    <string name="clear_all_history">清空记录</string>
+    <string name="confirm_clear_history">确定要清空所有拦截记录吗？</string>
+    <string name="history_count">共 %d 条记录</string>
+</resources>
